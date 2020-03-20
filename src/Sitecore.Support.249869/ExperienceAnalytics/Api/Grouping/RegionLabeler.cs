@@ -5,6 +5,7 @@ using Sitecore.ExperienceAnalytics.Core.Diagnostics;
 using Sitecore.ExperienceAnalytics.Core.Grouping;
 using Sitecore.Globalization;
 using Sitecore.StringExtensions;
+using Sitecore.Support.ExperienceAnalytics.Api.GeoLocationTranslations;
 
 namespace Sitecore.Support.ExperienceAnalytics.Api.Grouping
 {
@@ -38,7 +39,14 @@ namespace Sitecore.Support.ExperienceAnalytics.Api.Grouping
 
         private static string GetRegionTranslation(string regionCode)
         {
-            return typeof(Regions).GetField(regionCode).GetValue(null) as string;
+            try
+            {
+                return typeof(RegionsV2).GetField(regionCode).GetValue(null) as string;
+            }
+            catch
+            {
+                return typeof(Regions).GetField(regionCode).GetValue(null) as string;
+            }
         }
     }
 }

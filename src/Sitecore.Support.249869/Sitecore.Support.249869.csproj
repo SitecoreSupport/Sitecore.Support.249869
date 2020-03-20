@@ -61,6 +61,8 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExperienceAnalytics\Api\GeoLocationTranslations\RegionsV2.cs" />
+    <Compile Include="ExperienceAnalytics\Api\GeoLocationTranslations\Regions.cs" />
     <Compile Include="ExperienceAnalytics\Api\Response\DimensionKeyTransformers\RegionDimensionKeyTransformer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExperienceAnalytics\Api\Grouping\RegionLabeler.cs" />
